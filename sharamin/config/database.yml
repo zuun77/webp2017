@@ -16,18 +16,18 @@ default: &default
   username: zuun
   password: Rlawnsgur1@
   host: development.cpbk8a1zelj3.ap-northeast-1.rds.amazonaws.com
-  database: janghaksha
+  database: sharamin
 
 development:
   <<: *default
-  database: janghaksha_development
+  database: sharamin_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: janghaksha_test
+  database: sharamin_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: janghaksha_production
-  username: janghaksha
+  database: sharamin_production
+  username: sharamin
   password: <%= ENV['JANGHAKSHA_DATABASE_PASSWORD'] %>
