@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Club:</strong>
+  <%= @post.club %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @post.deadline %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @post.target %>
+</p>
+
+<p>
+  <strong>RecruitType:</strong>
+  <%= @post.recruit_type %>
+</p>
+
+<p>
+  <strong>Homepage:</strong>
+  <%= @post.homepage %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @post.questions %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

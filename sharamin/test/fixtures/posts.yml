@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  club: MyString
+  deadline: 2017-05-10 15:43:37
+  target: MyString
+  type: 
+  homepage: MyString
+  description: MyString
+  questions: 
+
+two:
+  club: MyString
+  deadline: 2017-05-10 15:43:37
+  target: MyString
+  type: 
+  homepage: MyString
+  description: MyString
+  questions: 
