@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511081040) do
+ActiveRecord::Schema.define(version: 20170516112321) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "club"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20170511081040) do
     t.json     "questions"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "token"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.datetime "token_created_at"
+    t.index ["token", "token_created_at"], name: "index_users_on_token_and_token_created_at", using: :btree
   end
 
 end
