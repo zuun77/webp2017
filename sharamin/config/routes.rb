@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :applications
 	get 'hacker_spots/index'
 
 	scope :format => true, :constraints => { :format => 'json' } do
