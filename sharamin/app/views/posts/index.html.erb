@@ -47,6 +47,8 @@ a{color:#666;text-decoration:none;}
 }
 .row {
   align-items: center;
+  text-align: center;
+  align-content: center;
 }
 
 .logo {
@@ -178,18 +180,18 @@ body {
 <%= link_to 'New Post', new_post_path %>
 -->
 =======
-<div class="container"> 
-	<div id="main-content"> 
-		<ul> 
+<div class="container">
+	<div id="main-content">
+		<ul>
 			<% @posts.each do |post| %>
 				<li>
 					<a href="/posts/<%= post.id %>">
 						<%= image_tag(post.attachment.to_s) %>
 						<span><%= post.club %></span>
 					</a>
-				</li> 
+				</li>
 			<% end %>
-		</ul> 
-	</div> 
-</div> 
+		</ul>
+	</div>
+</div>
 >>>>>>> d2c6c89124f855fdad62f44ba8991ba543b5d652
