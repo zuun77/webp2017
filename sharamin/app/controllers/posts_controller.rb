@@ -6,7 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
 	@menu = "view"
-    @posts = Post.all
+	query = params[:q];
+	if query 
+		@posts = Post.where("club LIKE ?", "%#{query}%")
+	else 
+		@posts = Post.all
+	end 
   end
 
   # GET /posts/1
@@ -66,6 +71,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
