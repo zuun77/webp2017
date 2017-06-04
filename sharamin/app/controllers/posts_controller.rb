@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 	skip_before_filter :verify_authenticity_token
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+
   # GET /posts
   # GET /posts.json
   def index
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+	@post.user = session[:user_id]
 	puts post_params
 
     respond_to do |format|

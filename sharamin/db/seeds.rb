@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 User.destroy_all
-User.create(name: 'bugs', email: 'bugs@rubyplus.com', password: '123456')
-User.create(name: 'daffy', email: 'daffy@rubyplus.com', password: '123456')
+User.create(name: 'test1', email: 'test1@zuun.com', pw: 'asdf')
+User.create(name: 'test2', email: 'test2@zuun.com', pw: 'asdf')
+User.create(name: 'test3', email: 'test3@zuun.com', pw: 'asdf')
+User.create(name: 'test4', email: 'test4@zuun.com', pw: 'asdf')
+User.create(name: 'test5', email: 'test5@zuun.com', pw: 'asdf')
+User.create(name: 'test6', email: 'test6@zuun.com', pw: 'asdf')

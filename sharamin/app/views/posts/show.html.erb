@@ -45,7 +45,7 @@
 	</div>
 	<br>
 	<br>
-	<% if true %>
+	<% if @post.user == session[:user_id] %>
 	<div class="container">
 		<div class="alert alert-success" role="alert">
 			<strong class="font_30">렛미스타트 13기 지원서</strong>
@@ -120,7 +120,7 @@
 		<a href="form.html"><button type="button" class="btn btn-lg btn-primary">지원하기</button></a>
 		</div>
 	</div>
-<% end %>
+	<% end %>
 </div>
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 	<div class="modal-dialog">
