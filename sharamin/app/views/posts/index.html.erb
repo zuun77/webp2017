@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <style>
 img{
   width:200px;
@@ -83,10 +84,18 @@ a{color:#666;text-decoration:none;}
 		</form>
 	</div>
 </nav>
+=======
+<style>
+body {
+	text-align:center;
+}
+</style>
+>>>>>>> d2c6c89124f855fdad62f44ba8991ba543b5d652
 <div class="logo">
 	<%= image_tag "logo.png" %>
 </div>
 
+<<<<<<< HEAD
 <div class="container-fluid">
   <div id="main-content">
     <div class="row">
@@ -168,3 +177,19 @@ a{color:#666;text-decoration:none;}
 <br>
 <%= link_to 'New Post', new_post_path %>
 -->
+=======
+<div class="container"> 
+	<div id="main-content"> 
+		<ul> 
+			<% @posts.each do |post| %>
+				<li>
+					<a href="/posts/<%= post.id %>">
+						<%= image_tag(post.attachment.to_s) %>
+						<span><%= post.club %></span>
+					</a>
+				</li> 
+			<% end %>
+		</ul> 
+	</div> 
+</div> 
+>>>>>>> d2c6c89124f855fdad62f44ba8991ba543b5d652

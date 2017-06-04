@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <!--
   <div class="field">
     <%= f.label :club %>
     <%= f.text_field :club %>
@@ -46,7 +47,88 @@
     <%= f.text_field :questions %>
   </div>
 
+  <div class="field">
+	  <%= f.label :attachment %>
+	  <%= f.file_field :attachment %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+  -->
+		<div class="container">
+			<div class="form-group row">
+				<label for="example-text-input" class="col-2 col-form-label">단체명</label>
+				<div class="col-10">
+					<%= f.text_field :club, class: 'form-control' %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-datetime-local-input" class="col-2 col-form-label">모집 기한</label>
+				<div class="col-10">
+					<% if post.deadline %> 
+					<input class="form-control" type="datetime-local" value="<%= post.deadline.strftime("%Y-%m-%dT%H:%M:%S") %>" id="example-datetime-local-input" name="post[deadline]">
+					<% else %>
+					<input class="form-control" type="datetime-local" id="example-datetime-local-input" name="post[deadline]">
+					<% end %>
+				</div>
+			</div>
+		
+			<div class="form-group row">
+				<label for="example-datetime-local-input" class="col-2 col-form-label">모집 대상</label>
+				<div class="col-10">
+					<%= f.text_field :target, class: 'form-control', placeholder:"학부생, 대학원생, 타대생" %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-datetime-local-input" class="col-2 col-form-label">모집 부문</label>
+				<div class="col-10">
+					<%= f.text_field :recruit_type, class: 'form-control', placeholder:"연출팀, 기획팀 등등" %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-email-input" class="col-2 col-form-label">홈페이지 주소</label>
+				<div class="col-10">
+					<%= f.text_field :homepage, class:'form-control' %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-email-input" class="col-2 col-form-label">기타사항</label>
+				<div class="col-10">
+					<%= f.text_field :etc, class:'form-control' %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="exampleTextarea" class="col-2 col-form-label">모집 안내</label>
+				<div class="col-10">
+					<%= f.text_area :description, class:'form-control', rows:"8" %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="exampleInputFile" class="col-2 col-form-label">파일 첨부</label>
+				<div class="col-10">
+					<input type="file" class="form-control-file" id="exampleInputFile" name="post[attachment]">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-text-input" class="col-2 col-form-label">질문 1</label>
+				<div class="col-10">
+					<input class="form-control" type="text" value="동아리에 지원하게 된 계기가 무엇입니까?" id="example-text-input">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-text-input" class="col-2 col-form-label">질문 2</label>
+				<div class="col-10">
+					<input class="form-control" type="text" value="동아리에서 하고 싶은 역할은?" id="example-text-input">
+				</div>
+			</div>
+			<div class="row">
+				<button type="button" class="btn btn-info">질문 추가</button>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-12">
+				<button type="submit" class="btn btn-lg btn-primary">새 리크루팅 작성</button>
+				</div>
+			</div>
+		</div>
 <% end %>
