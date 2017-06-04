@@ -5,21 +5,25 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+	@menu = "view"
     @posts = Post.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+	@menu = "view"
   end
 
   # GET /posts/new
   def new
+	@menu = "recruit"
     @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+	@menu = "recruit"
   end
 
   # POST /posts
@@ -71,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:club, :deadline, :target, :type, :homepage, :description, :questions)
-    end
+      params.require(:post).permit(:club, :deadline, :target, :recruit_type, :homepage, :description, :questions, :attachment, :etc)
+	end
 end

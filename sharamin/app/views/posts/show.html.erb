@@ -1,39 +1,158 @@
-<p id="notice"><%= notice %></p>
+<div class="container header">
+	<div class="alert alert-info">
+		<strong class="font_30"><%= @post.club %> 신입부원 모집공고</strong>
+	</div>
+</div>
+<div class="container">
+	<div class="row club_intro">
+		<%= image_tag @post.attachment.to_s, class:'logo_img float-left' %>
+		
+		<p>
+			<%= @post.description %>
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>모집부문</strong>
+		</div>
+		<div class="col-sm-10">
+			<%= @post.target %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong> 모집기간 </strong>
+		</div>
+		<div class="col-sm-10">
+			<%= @post.deadline.strftime("%Y-%m-%d %H시 까지") %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong> 기타 사항 </strong>
+		</div>
+		<div class="col-sm-10">
+			<%= @post.etc %> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong> 홈페이지 주소 </strong>
+		</div>
+		<div class="col-sm-10">
+			<a href="<%= @post.homepage %>" target="_blank"><%= @post.club %> 홈페이지</a>
+		</div>
+	</div>
+	<br>
+	<br>
+	<% if true %>
+	<div class="container">
+		<div class="alert alert-success" role="alert">
+			<strong class="font_30">렛미스타트 13기 지원서</strong>
+		</div>
+		<div id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="card">
+				<div class="card-header" role="tab" id="headingOne">
+					<h5 class="mb-0">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							김태희
+						</a>
+					</h5>
+				</div>
 
-<p>
-  <strong>Club:</strong>
-  <%= @post.club %>
-</p>
+				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+					<div class="card-block">
+						<dl class="dl-horizontal">
+							<dt>이름 </dt><dd>  김태희</dd>
+							<dt>학과</dt><dd>  농경제사회학부</dd>
+							<dt>학번</dt><dd>  15학번</dd>
+							<dt>지원부문</dt><dd>  연출팀</dd>
+							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab" id="headingTwo">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							조정석
+						</a>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="card-block">
+						<dl class="dl-horizontal">
+							<dt>이름 </dt><dd>  조정석</dd>
+							<dt>학과</dt><dd>  농경제사회학부</dd>
+							<dt>학번</dt><dd>  15학번</dd>
+							<dt>지원부문</dt><dd>  연출팀</dd>
+							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab" id="headingThree">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							수지
+						</a>
+					</h5>
+				</div>
+				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="card-block">
+						<dl class="dl-horizontal">
+							<dt>이름 </dt><dd>  수지</dd>
+							<dt>학과</dt><dd>  농경제사회학부</dd>
+							<dt>학번</dt><dd>  15학번</dd>
+							<dt>지원부문</dt><dd>  연출팀</dd>
+							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% else %>
+	<div class="row text-center">
+		<div class="col-sm-12">
+		<a href="form.html"><button type="button" class="btn btn-lg btn-primary">지원하기</button></a>
+		</div>
+	</div>
+<% end %>
+</div>
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="loginmodal-container">
+			<h1>로그인 하세요</h1><br>
+			<form>
+				<input type="text" name="user" placeholder="ID를 입력해주세요">
+				<input type="password" name="pass" placeholder="비밀번호를 입력해주세요">
+				<input type="submit" name="login" class="login loginmodal-submit" value="로그인">
+			</form>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @post.deadline %>
-</p>
+			<div class="login-help">
+				<a href="#" data-toggle="modal" data-target="#signup-modal">가입하기</a>
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="loginmodal-container">
+			<h1>가입하기</h1><br>
+			<form>
+				<input type="text" name="user" placeholder="영문, 숫자 조합">
+				<input type="password" name="pass" placeholder="영문, 숫자 조합 8자 이상">
+				<input type="text" name="name" placeholder="이름을 입력해주세요">
+				<input type="text" name="email" placeholder="마이스누 Email">
+				<input type="submit" name="login" class="login loginmodal-submit" value="가입">
+			</form>
 
-<p>
-  <strong>Target:</strong>
-  <%= @post.target %>
-</p>
-
-<p>
-  <strong>RecruitType:</strong>
-  <%= @post.recruit_type %>
-</p>
-
-<p>
-  <strong>Homepage:</strong>
-  <%= @post.homepage %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Questions:</strong>
-  <%= @post.questions %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+			<div class="login-help">
+				<a href="#" data-toggle="modal" data-target="#login-modal">로그인하기</a>
+			</div>
+		</div>
+	</div>
+</div>	

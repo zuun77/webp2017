@@ -1,32 +1,8 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top ">
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand" href="home.html">ㅅF람인</a>
-
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="home.html">모집 보기<span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="new_recruit.html">모집 하기</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login-modal">로그인</a>
-					<a class="dropdown-item" href="#">로그아웃</a>
-					<a class="dropdown-item" href="#">즐겨찾기</a>
-				</div>
-			</li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="동아리 검색">
-			<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Go !</button>
-		</form>
-	</div>
-</nav>
+<style>
+body {
+	text-align:center;
+}
+</style>
 <div class="logo">
 	<%= image_tag "logo.png" %>
 </div>
@@ -34,54 +10,14 @@
 <div class="container"> 
 	<div id="main-content"> 
 		<ul> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li> 
-			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li>
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li> 
-			<li><a href="apply.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li>
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
+			<% @posts.each do |post| %>
+				<li>
+					<a href="/posts/<%= post.id %>">
+						<%= image_tag(post.attachment.to_s) %>
+						<span><%= post.club %></span>
+					</a>
+				</li> 
+			<% end %>
 		</ul> 
 	</div> 
 </div> 
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Club</th>
-      <th>Deadline</th>
-      <th>Target</th>
-      <th>Type</th>
-      <th>Homepage</th>
-      <th>Description</th>
-      <th>Questions</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.club %></td>
-        <td><%= post.deadline %></td>
-        <td><%= post.target %></td>
-        <td><%= post.recruit_type %></td>
-        <td><%= post.homepage %></td>
-        <td><%= post.description %></td>
-        <td><%= post.questions %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'New Post', new_post_path %>
--->
