@@ -28,7 +28,7 @@ a{color:#666;text-decoration:none;}
 }
 
 #main-content a span{position:absolute;left:-9999px;}
-#main-content a:hover span{	
+#main-content a:hover span{
 	top:10px;
 	left:10px;
 	width:202px;
@@ -41,7 +41,11 @@ a{color:#666;text-decoration:none;}
 	border:1px solid #EEE;
 	border-width:0 0 10px 0;
 	filter: alpha(opacity=100);
-} 
+  text-align: center;
+}
+.row {
+  align-items: center;
+}
 
 .logo {
 	margin-top:60px;
@@ -80,24 +84,51 @@ a{color:#666;text-decoration:none;}
 	<%= image_tag "logo.png" %>
 </div>
 
-<div class="container"> 
-	<div id="main-content"> 
-		<ul> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li> 
-			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li>
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li> 
-			<li><a href="apply.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li>
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/224438_143800325705096_2967214_n.jpg?oh=83a693eb0548eb43478d26964d1304b0&oe=5983B521" alt="The thumb" /><span>SNUPia</span></a></li> 
-			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16508467_1241529115896749_262133757060916_n.jpg?oh=2225da687734676c23922fa8e28571e4&oe=59740E8B" alt="The thumb" /><span>SNUPO</span></a></li> 
-		</ul> 
-	</div> 
-</div> 
+<div class="container-fluid">
+  <div id="main-content">
+    <div class="row">
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+    </div>
+        <div class="row">
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/16939596_1795736250452566_8459705394553629642_n.png?oh=98411a03db84df79268c7d0940093bbd&oe=59816B3C" /><span>서울대학교 방송 SUB</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="detail.html"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/10635992_764701383590365_5959189969637893930_n.jpg?oh=023e93af63a750e20703b598aed3c678&oe=59873F17" alt="The thumb" /><span>렛미스타트</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+        <div class="col-md-3">
+  			<li><a href="#"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/14117840_1182420671819570_4714972921419125176_n.jpg?oh=3f311ef38ab04a86232e29e008a9730c&oe=59C22008" alt="The thumb" /><span>대학신문</span></a></li></div>
+    </div>
+	</div>
+</div>
 <!--
 <table>
   <thead>
