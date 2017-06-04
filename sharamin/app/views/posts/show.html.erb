@@ -5,8 +5,7 @@
 </div>
 <div class="container">
 	<div class="row club_intro">
-		<%= image_tag @post.attachment.to_s, class:'logo_img float-left' %>
-		
+		<%= image_tag @post.logo_img.to_s, class:'logo_img float-left' %>
 		<p>
 			<%= @post.description %>
 		</p>
@@ -15,7 +14,7 @@
 		<div class="col-sm-2">
 			<strong>모집부문</strong>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-sm-">
 			<%= @post.target %>
 		</div>
 	</div>
@@ -42,6 +41,9 @@
 		<div class="col-sm-10">
 			<a href="<%= @post.homepage %>" target="_blank"><%= @post.club %> 홈페이지</a>
 		</div>
+	</div>
+	<div class="row attach_wrapper">
+	<%= image_tag @post.attachment.to_s %>
 	</div>
 	<br>
 	<br>
