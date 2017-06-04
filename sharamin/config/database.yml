@@ -16,7 +16,15 @@ default: &default
   username: zuun_webp
   password: webp2017!@#
   host: development.cpbk8a1zelj3.ap-northeast-1.rds.amazonaws.com
+<<<<<<< HEAD
+<<<<<<< .merge_file_a09016
+  database: sharamin
+=======
+  database: sharamin_development
+>>>>>>> .merge_file_a06656
+=======
   database: webp2017_group3
+>>>>>>> d2c6c89124f855fdad62f44ba8991ba543b5d652
 
 development:
   <<: *default
@@ -27,7 +35,15 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+<<<<<<< HEAD
+<<<<<<< .merge_file_a09016
+  database: sharamin_test
+=======
+  database: sharamin_development
+>>>>>>> .merge_file_a06656
+=======
   database: webp2017_group3
+>>>>>>> d2c6c89124f855fdad62f44ba8991ba543b5d652
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +66,12 @@ test:
 #
 production:
   <<: *default
+<<<<<<< .merge_file_a09016
+  database: sharamin_production
+  username: sharamin
+  password: <%= ENV['JANGHAKSHA_DATABASE_PASSWORD'] %>
+=======
   database: sharamin_test
   username: zuun_webp
   password: webp2017!@#
+>>>>>>> .merge_file_a06656
