@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :applications
+  resources :resumes
   resources :user
 	get 'hacker_spots/index'
 
