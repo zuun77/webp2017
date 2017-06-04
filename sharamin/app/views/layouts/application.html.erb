@@ -33,23 +33,104 @@
 					<a class="nav-link" href="/posts/new">모집 하기</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<% if session[:user_id] %>
+						<a id="logout" class="dropdown-item" href="#">로그아웃</a>
+						<% else %>
 						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login-modal">로그인</a>
-						<a class="dropdown-item" href="#">로그아웃</a>
+						<% end %>
 						<a class="dropdown-item" href="#">즐겨찾기</a>
 					</div>
 				</li>
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="text" placeholder="동아리 검색">
+			<form class="form-inline my-2 my-lg-0" action="/">
+				<input class="form-control mr-sm-2" type="text" placeholder="동아리 검색" name="q">
 				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Go !</button>
 			</form>
 		</div>
 	</nav>
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>로그인 하세요</h1><br>
+				<form>
+					<input type="text" id="login_id" name="user" placeholder="ID를 입력해주세요">
+					<input type="password" id="login_pw" name="pass" placeholder="비밀번호를 입력해주세요">
+					<input type="button" id="btn_login" name="login" class="login loginmodal-submit" value="로그인">
+				</form>
+
+				<div class="login-help">
+					<a href="#" data-toggle="modal" data-target="#signup-modal">가입하기</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>가입하기</h1><br>
+				<form>
+					<input type="text" id="reg_id" name="user" placeholder="영문, 숫자 조합">
+					<input type="password" id="reg_pw" name="pass" placeholder="영문, 숫자 조합 8자 이상">
+					<input type="text" id="name" name="name" placeholder="이름을 입력해주세요">
+					<input type="button" id="btn_register" name="login" class="login loginmodal-submit" value="가입">
+				</form>
+
+				<div class="login-help">
+					<a href="#" data-toggle="modal" data-target="#login-modal">로그인하기</a>
+				</div>
+			</div>
+		</div>
+	</div>	
     <%= yield %>
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			$("#btn_login").click(function(e) {
+				$.ajax({
+					url :'/user/login',
+					type:'POST',
+					data: {
+						email: $("#login_id").val(),
+						pw: $("#login_pw").val()
+					},
+					success: function(data) {
+						console.log(data);
+						location.reload();
+					}
+				});
+			});
+
+			$("#btn_register").click(function(e) {
+				$.ajax({
+					url :'/user/register',
+					type:'POST',
+					data: {
+						email: $("#reg_id").val(),
+						pw: $("#reg_pw").val(),
+						name: $("#name").val()
+					},
+					success: function(data) {
+						console.log(data);
+						location.reload();
+					}
+				});
+			});
+
+			$("#logout").click(function(e) {
+				$.ajax({
+					url :'/user/logout',
+					type:'POST',
+					success: function(data) {
+						console.log(data);
+						location.reload();
+					}
+				});
+			});
+		});
+	</script>
   </body>
 </html>

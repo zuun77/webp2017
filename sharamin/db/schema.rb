@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604133020) do
+ActiveRecord::Schema.define(version: 20170604145114) do
 
   create_table "applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"
@@ -34,17 +34,15 @@ ActiveRecord::Schema.define(version: 20170604133020) do
     t.datetime "updated_at",                 null: false
     t.string   "attachment"
     t.string   "etc"
+    t.integer  "user"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
-    t.string   "name"
-    t.string   "token"
     t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.datetime "token_created_at"
-    t.index ["token", "token_created_at"], name: "index_users_on_token_and_token_created_at", using: :btree
+    t.string   "pw"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

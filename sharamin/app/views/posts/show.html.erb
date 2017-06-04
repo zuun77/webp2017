@@ -45,7 +45,7 @@
 	</div>
 	<br>
 	<br>
-	<% if true %>
+	<% if @post.user == session[:user_id] %>
 	<div class="container">
 		<div class="alert alert-success" role="alert">
 			<strong class="font_30">렛미스타트 13기 지원서</strong>
@@ -114,45 +114,16 @@
 			</div>
 		</div>
 	</div>
+	<div class="row text-center">
+		<div class="col-sm-12">
+			<a href="/posts/<%=@post.id%>/edit"><button type="button" class="btn btn-lg btn-primary">수정하기</button></a>
+		</div>
+	</div>
 	<% else %>
 	<div class="row text-center">
 		<div class="col-sm-12">
 		<a href="form.html"><button type="button" class="btn btn-lg btn-primary">지원하기</button></a>
 		</div>
 	</div>
-<% end %>
+	<% end %>
 </div>
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>로그인 하세요</h1><br>
-			<form>
-				<input type="text" name="user" placeholder="ID를 입력해주세요">
-				<input type="password" name="pass" placeholder="비밀번호를 입력해주세요">
-				<input type="submit" name="login" class="login loginmodal-submit" value="로그인">
-			</form>
-
-			<div class="login-help">
-				<a href="#" data-toggle="modal" data-target="#signup-modal">가입하기</a>
-			</div>
-		</div>
-	</div>
-</div>	
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>가입하기</h1><br>
-			<form>
-				<input type="text" name="user" placeholder="영문, 숫자 조합">
-				<input type="password" name="pass" placeholder="영문, 숫자 조합 8자 이상">
-				<input type="text" name="name" placeholder="이름을 입력해주세요">
-				<input type="text" name="email" placeholder="마이스누 Email">
-				<input type="submit" name="login" class="login loginmodal-submit" value="가입">
-			</form>
-
-			<div class="login-help">
-				<a href="#" data-toggle="modal" data-target="#login-modal">로그인하기</a>
-			</div>
-		</div>
-	</div>
-</div>	
