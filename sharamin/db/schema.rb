@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604161015) do
+ActiveRecord::Schema.define(version: 20170605180815) do
 
   create_table "applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20170604161015) do
     t.datetime "updated_at",                 null: false
     t.string   "attachment"
     t.string   "etc"
-    t.integer  "user"
     t.string   "logo_img"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "resumes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
@@ -46,6 +47,11 @@ ActiveRecord::Schema.define(version: 20170604161015) do
     t.string   "id_num"
     t.string   "degree"
     t.string   "position"
+    t.json     "answers"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.index ["post_id"], name: "index_resumes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_resumes_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
@@ -56,4 +62,7 @@ ActiveRecord::Schema.define(version: 20170604161015) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "users"
+  add_foreign_key "resumes", "posts"
+  add_foreign_key "resumes", "users"
 end
