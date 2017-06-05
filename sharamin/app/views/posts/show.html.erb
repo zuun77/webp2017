@@ -31,7 +31,7 @@
 			<strong> 기타 사항 </strong>
 		</div>
 		<div class="col-sm-10">
-			<%= @post.etc %> 
+			<%= @post.etc %>
 		</div>
 	</div>
 	<div class="row">
@@ -124,7 +124,9 @@
 	<% else %>
 	<div class="row text-center">
 		<div class="col-sm-12">
-		<a href="form.html"><button type="button" class="btn btn-lg btn-primary">지원하기</button></a>
+		<a href="/resumes/new">
+		<input type="button" id="btn_apply" class="btn btn-lg btn-primary" value="지원하기">
+		</a>
 		</div>
 	</div>
 	<% end %>

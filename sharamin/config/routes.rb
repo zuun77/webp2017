@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 	post '/user/register' => "user#register"
 	post '/user/login' => "user#login"
 	post '/user/logout' => "user#logout"
+
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

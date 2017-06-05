@@ -5,14 +5,15 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+	
   def index
 	@menu = "view"
 	query = params[:q];
-	if query 
+	if query
 		@posts = Post.where("club LIKE ?", "%#{query}%")
-	else 
+	else
 		@posts = Post.all
-	end 
+	end
   end
 
   # GET /posts/1
