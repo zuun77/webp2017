@@ -53,11 +53,12 @@
 			<strong class="font_30">렛미스타트 13기 지원서</strong>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
+			<% @resumes.each do |resume| %>
 			<div class="card">
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							김태희
+							<%= resume.name %>
 						</a>
 					</h5>
 				</div>
@@ -65,55 +66,20 @@
 				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 					<div class="card-block">
 						<dl class="dl-horizontal">
-							<dt>이름 </dt><dd>  김태희</dd>
-							<dt>학과</dt><dd>  농경제사회학부</dd>
-							<dt>학번</dt><dd>  15학번</dd>
-							<dt>지원부문</dt><dd>  연출팀</dd>
-							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
+							<dt>이름</dt><dd><%= resume.name %></dd>
+							<dt>학과</dt><dd><%= resume.dept %></dd>
+							<dt>학번</dt><dd><%= resume.id_num %></dd>
+							<dt>소속</dt><dd><%= resume.degree %></dd>
+							<dt>지원부문</dt><dd><%= resume.position %></dd>
+							<% resume.answers.each do |qa| %>
+							<dt><%= qa.q %></dt>
+							<dd><%= qa.a %></dd>
+							<% end %>
 						</dl>
 					</div>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-header" role="tab" id="headingTwo">
-					<h5 class="mb-0">
-						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							조정석
-						</a>
-					</h5>
-				</div>
-				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-					<div class="card-block">
-						<dl class="dl-horizontal">
-							<dt>이름 </dt><dd>  조정석</dd>
-							<dt>학과</dt><dd>  농경제사회학부</dd>
-							<dt>학번</dt><dd>  15학번</dd>
-							<dt>지원부문</dt><dd>  연출팀</dd>
-							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
-						</dl>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab" id="headingThree">
-					<h5 class="mb-0">
-						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							수지
-						</a>
-					</h5>
-				</div>
-				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-					<div class="card-block">
-						<dl class="dl-horizontal">
-							<dt>이름 </dt><dd>  수지</dd>
-							<dt>학과</dt><dd>  농경제사회학부</dd>
-							<dt>학번</dt><dd>  15학번</dd>
-							<dt>지원부문</dt><dd>  연출팀</dd>
-							<dt>지원동기</dt><dd>  뮤지컬 광염소나타를 보고 뮤지컬의 매력에 빠져 지원하였습니다.</dd>
-						</dl>
-					</div>
-				</div>
-			</div>
+			<% end %>
 		</div>
 	</div>
 	<div class="row text-center">

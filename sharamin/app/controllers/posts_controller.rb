@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
 	@menu = "view"
+	@resumes = Resume.where("post_id", params[:id])
   end
 
   # GET /posts/new
