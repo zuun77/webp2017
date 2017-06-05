@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-	@post.user = session[:user_id]
+	@post.user_id = session[:user_id]
 	puts post_params
 
     respond_to do |format|
@@ -85,6 +85,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:club, :deadline, :target, :recruit_type, :homepage, :description, :questions, :attachment, :etc, :logo_img)
+      params.require(:post).permit(:club, :deadline, :target, :recruit_type, :homepage, :description, :questions, :attachment, :etc, :logo_img, :user_id)
 	end
 end
