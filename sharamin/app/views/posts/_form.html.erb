@@ -26,14 +26,14 @@
 		<div class="form-group row">
 			<label for="example-datetime-local-input" class="col-2 col-form-label">모집 기한</label>
 			<div class="col-10">
-				<% if post.deadline %> 
+				<% if post.deadline %>
 				<input class="form-control" type="datetime-local" value="<%= post.deadline.strftime("%Y-%m-%dT%H:%M:%S") %>" id="example-datetime-local-input" name="post[deadline]">
 				<% else %>
 				<input class="form-control" type="datetime-local" id="example-datetime-local-input" name="post[deadline]">
 				<% end %>
 			</div>
 		</div>
-	
+
 		<div class="form-group row">
 			<label for="example-datetime-local-input" class="col-2 col-form-label">모집 대상</label>
 			<div class="col-10">
@@ -85,6 +85,27 @@
 		<div class="row">
 			<button type="button" class="btn btn-info">질문 추가</button>
 		</div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js">
+    </script>
+    <script>
+    $(function(){
+      $("btn btn-info").click(function(){
+        addRow();
+      });
+    });
+
+    function addRow(){
+      var html="<div class=\"contents_row\"><div class=\"contents_col\"><input type=\"button\"name=\"add_btn\"value=\"+\"></div>";
+
+      $(div class="row").append(html);
+    }
+
+    function delRow(object){
+      var index=$("#list_detai.contnets_row[name=del_btn]").index(object);
+      $("list-detail.contnets_row").eq(index).remove();
+    }
+    </script>
+
 		<div class="row text-center">
 			<div class="col-sm-12">
 			<button type="submit" class="btn btn-lg btn-primary">새 리크루팅 작성</button>
