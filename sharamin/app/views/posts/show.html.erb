@@ -14,7 +14,7 @@
 		<div class="col-sm-2">
 			<strong>모집부문</strong>
 		</div>
-		<div class="col-sm-">
+		<div class="col-sm-10">
 			<%= @post.target %>
 		</div>
 	</div>
@@ -53,17 +53,17 @@
 			<strong class="font_30">렛미스타트 13기 지원서</strong>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
-			<% @resumes.each do |resume| %>
+			<% @resumes.each_with_index do |resume, i| %>
 			<div class="card">
 				<div class="card-header" role="tab" id="headingOne">
 					<h5 class="mb-0">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>" aria-expanded="true" aria-controls="collapseOne">
 							<%= resume.name %>
 						</a>
 					</h5>
 				</div>
 
-				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+				<div id="collapse<%=i%>" class="collapse" role="tabpanel" aria-labelledby="headingOne">
 					<div class="card-block">
 						<dl class="dl-horizontal">
 							<dt>이름</dt><dd><%= resume.name %></dd>
@@ -71,9 +71,9 @@
 							<dt>학번</dt><dd><%= resume.id_num %></dd>
 							<dt>소속</dt><dd><%= resume.degree %></dd>
 							<dt>지원부문</dt><dd><%= resume.position %></dd>
-							<% resume.answers.each do |qa| %>
-							<dt><%= qa.q %></dt>
-							<dd><%= qa.a %></dd>
+							<% JSON.parse(resume.answers).each do |qa| %>
+							<dt><%= qa['q'] %></dt>
+							<dd><%= qa['a'] %></dd>
 							<% end %>
 						</dl>
 					</div>
@@ -90,8 +90,8 @@
 	<% else %>
 	<div class="row text-center">
 		<div class="col-sm-12">
-		<a href="/resumes/new">
-		<input type="button" id="btn_apply" class="btn btn-lg btn-primary" value="지원하기">
+			<a href="/resumes/new?p=<%=@post.id%>">
+			<input type="button" id="btn_apply" class="btn btn-lg btn-primary" value="지원하기">
 		</a>
 		</div>
 	</div>

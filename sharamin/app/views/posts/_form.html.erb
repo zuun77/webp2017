@@ -70,7 +70,7 @@
 				<%= f.file_field :attachment, class:'form-control-file' %>
 			</div>
 		</div>
-		<input id="q_str" type="hidden" name="post[questions]" value="">
+		<input id="q_val" type="hidden" name="post[questions]" value="">
 		<div id="q_wrapper">
 			<% if post.questions %>
 				<% JSON.parse(post.questions).each_with_index do |q, index| %>
@@ -122,8 +122,8 @@
 				var v = $(item).find("input").val();
 				if(v) q.push(v);
 			});
-			var str = JSON.stringify(q);
-			$("#q_str").val(str);			
+			var q_str = JSON.stringify(q);
+			$("#q_val").val(q_str);			
 			$(this).parents('form').submit();
 		});
  });

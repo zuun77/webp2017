@@ -14,6 +14,8 @@ class ResumesController < ApplicationController
 
   # GET /resumes/new
   def new
+	p = params[:p]
+	@post = Post.find(p);
     @resume = Resume.new
   end
 
@@ -25,10 +27,11 @@ class ResumesController < ApplicationController
   # POST /resumes.json
   def create
     @resume = Resume.new(resume_params)
+	@resume.user_id = session[:user_id]
 
     respond_to do |format|
       if @resume.save
-        format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
+        format.html { redirect_to "/posts/".concat(@resume.post_id.to_s), notice: 'Resume was successfully created.' }
         format.json { render :show, status: :created, location: @resume }
       else
         format.html { render :new }
@@ -70,5 +73,6 @@ class ResumesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def resume_params
       params.fetch(:resume, {})
+      params.require(:resume).permit(:name, :dept, :id_num, :degree, :position, :answers, :post_id)
     end
 end
