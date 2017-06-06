@@ -7,7 +7,7 @@
 	<div class="row club_intro">
 		<%= image_tag @post.logo_img.to_s, class:'logo_img float-left' %>
 		<p>
-			<%= @post.description %>
+		<%= raw @post.description.gsub(/[\n\r]/,"<br/>") %>
 		</p>
 	</div>
 	<div class="row">
