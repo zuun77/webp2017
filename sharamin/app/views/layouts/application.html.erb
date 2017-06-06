@@ -32,16 +32,12 @@
 				<% end %>
 					<a class="nav-link" href="/posts/new">모집 하기</a>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
-					<div class="dropdown-menu" aria-labelledby="dropdown01">
-						<% if session[:user_id] %>
-						<a id="logout" class="dropdown-item" href="#">로그아웃</a>
-						<% else %>
-						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login-modal">로그인</a>
-						<% end %>
-						<a class="dropdown-item" href="#">즐겨찾기</a>
-					</div>
+				<li class="nav-item">
+					<% if session[:user_id] %>
+						<a id="logout" class="nav-link" href="#">로그아웃</a>
+					<% else %>
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#login-modal">로그인</a>
+					<% end %>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0" action="/">
